@@ -30,7 +30,7 @@ def generate_launch_description():
 
     
     model, plugin, media = GazeboRosPaths.get_paths()
-    #print('model:', model)
+    # print('model:', model)
 
     if 'GAZEBO_MODEL_PATH' in environ:
         model += pathsep+environ['GAZEBO_MODEL_PATH']
@@ -73,15 +73,18 @@ def generate_launch_description():
 
         SetEnvironmentVariable(
             name='GAZEBO_MODEL_PATH', 
-            value=[EnvironmentVariable('GAZEBO_MODEL_PATH'), my_gazebo_models]
-        ),
-        SetEnvironmentVariable(
-            name='GAZEBO_RESOURCE_PATH', 
-            value=[EnvironmentVariable('GAZEBO_RESOURCE_PATH'), my_gazebo_models]
+            # value=[EnvironmentVariable('GAZEBO_MODEL_PATH'), my_gazebo_models]
+            value=model
         ),
         SetEnvironmentVariable(
             name='GAZEBO_PLUGIN_PATH', 
-            value=[EnvironmentVariable('GAZEBO_PLUGIN_PATH'), plugin]
+            # value=[EnvironmentVariable('GAZEBO_PLUGIN_PATH'), plugin]
+            value=plugin
+        ),
+        SetEnvironmentVariable(
+            name='GAZEBO_RESOURCE_PATH', 
+            # value=[EnvironmentVariable('GAZEBO_RESOURCE_PATH'), media]
+            value=media
         ),
 
         DeclareLaunchArgument(

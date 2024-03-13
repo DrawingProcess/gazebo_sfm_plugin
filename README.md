@@ -80,11 +80,19 @@ The parameters that can be configured for each pedestrian are:
 
 * Yo must download and install the Social Force Model library, lightsfm https://github.com/robotics-upo/lightsfm
 
+```sh
+git clone https://github.com/robotics-upo/lightsfm
+cd lightsfm
+make
+sudo make install
+```
+
 ## Compilation
 
 * This is a ROS2 package so it must be placed inside a ROS2 workspace and compiled through the regular colcon compiler. 
 ```sh
 colcon build --packages-select gazebo_sfm_plugin
+source ~/ros2_ws/install/setup.bash
 ```
 
 ## Example
