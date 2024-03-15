@@ -94,6 +94,11 @@ sudo make install
 colcon build --packages-select gazebo_sfm_plugin
 source ~/ros2_ws/install/setup.bash
 ```
+* Setting GAZEBO_RESOURCE_PATH
+```sh
+echo "export GAZEBO_RESOURCE_PATH='/usr/share/gazebo-11:$GAZEBO_RESOURCE_PATH'" >> ~/.bashrc
+source ~/.bashrc
+```
 
 ## Example
 

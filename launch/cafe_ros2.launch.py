@@ -66,8 +66,12 @@ def generate_launch_description():
         _boolean_command('verbose'), ' ',
     ]
 
-    
-
+    if EnvironmentVariable('GAZEBO_MODEL_PATH').default_value:
+        model = model + ":" + EnvironmentVariable('GAZEBO_MODEL_PATH')
+    if EnvironmentVariable('GAZEBO_PLUGIN_PATH').default_value:
+        plugin = plugin + ":" + EnvironmentVariable('GAZEBO_PLUGIN_PATH')
+    if EnvironmentVariable('GAZEBO_RESOURCE_PATH').default_value:
+        media = media + ":" + EnvironmentVariable('GAZEBO_RESOURCE_PATH')
 
     return LaunchDescription([
 
