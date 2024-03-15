@@ -96,7 +96,7 @@ source ~/ros2_ws/install/setup.bash
 ```
 * Setting GAZEBO_RESOURCE_PATH
 ```sh
-echo "export GAZEBO_RESOURCE_PATH='/usr/share/gazebo-11:$GAZEBO_RESOURCE_PATH'" >> ~/.bashrc
+echo "export GAZEBO_RESOURCE_PATH='$GAZEBO_RESOURCE_PATH:/usr/share/gazebo-11'" >> ~/.bashrc
 source ~/.bashrc
 ```
 
